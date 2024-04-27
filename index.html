@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>To Do LIst </title>
     <style>
-       body {
+        body {
             margin: 0;
             padding: 0;
             background-color: #8EC5FC;
@@ -25,7 +26,7 @@
             background-image: radial-gradient(73% 147%, #EADFDF 59%, #ECE2DF 100%), radial-gradient(91% 146%, rgba(255, 255, 255, 0.50) 47%, rgba(0, 0, 0, 0.50) 100%);
             background-blend-mode: screen;
             position: relative;
-            
+
 
         }
 
@@ -33,11 +34,14 @@
             font-size: 30px;
             text-align: center;
         }
+
         .list-container {
             height: 300px;
             padding: 10px;
-        
+            overflow-y: scroll;
+
         }
+
         .list-item {
             font-size: 20px;
             border: 1px solid black;
@@ -85,10 +89,9 @@
             font-size: 19px;
             box-shadow: 0 0 5px 2px gray;
         }
-
-
     </style>
 </head>
+
 <body>
     <div class="main-container">
         <h1 class="app-heading">To Do List App</h1>
@@ -107,27 +110,35 @@
         </div>
     </div>
 
-<!-- javascript -->
-<script>
+    <!-- javascript -->
+    <script>
 
- const toDoList = [] ;         //creating an empty array//  
+        const toDoList = [];         //creating an empty array//  
 
- function add (){
-    const inputElement = document.getElementById("input");
-    toDoList.push(inputElement.value)  ;
-    console.log(inputElement.value)  ;
-    inputElement.value=""  ;
- }
+        function add() {
 
-  function renderToDOList(){
-    const listContainerElement =document.getElementById("list-container");
-    listContainerElement.innerHTML="";       //by defualut set as an empty container list//  
+            const inputElement = document.getElementById("input");
+            if (inputElement.value == "") {
+                alert('Task cannot be empty....')
+                return;
+            }
 
-    for (const toDoItem of toDoList){
-        listContainerElement.innerHTML += `<div class="list-item" > ${toDoItem}</div>`
+            toDoList.push(inputElement.value);
+            console.log(inputElement.value);
+            inputElement.value = "";
+            renderToDOList();
+        }
 
-    }
-  }
- </script>
+        function renderToDOList() {
+            const listContainerElement = document.getElementById("list-container");
+            listContainerElement.innerHTML = "";       //by defualut set as an empty container list//  
+
+            for (const toDoItem of toDoList) {
+                listContainerElement.innerHTML += `<div class="list-item" > <input type="checkbox" type="disc"/> ${toDoItem}</div>`
+              
+            }
+        }
+    </script>
 </body>
+
 </html>
