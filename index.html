@@ -89,6 +89,50 @@
             font-size: 19px;
             box-shadow: 0 0 5px 2px gray;
         }
+
+        /* media querri */
+
+        @media screen and (min-width:350px) and (max-width:550px) {
+
+            .main-container {
+                width: 90%;
+                display: block;
+                margin: 100px auto;
+
+            }
+
+            .app-heading {
+                font-size: 28px;
+                text-align: center;
+            }
+
+            .list-item {
+                font-size: 19px;
+                height: 26px;
+            }
+
+            .action-container {
+                width: 90%;
+                margin: 0 auto;
+            }
+
+            .input-box {
+                font-size: 17px;
+                width: 60%;
+            }
+
+            .btn {
+                font-size: 17px;
+                padding: 8px 20px;
+                width: 80px;
+                height: 40px;
+                border-radius: 10px;
+                font-weight: bold;
+                border: 1px solid black;
+                background-image: linear-gradient(120deg, #89f7fe 0%, #66a6ff 100%);
+            }
+
+        }
     </style>
 </head>
 
@@ -135,7 +179,7 @@
 
             for (const toDoItem of toDoList) {
                 listContainerElement.innerHTML += `<div class="list-item" > <input type="checkbox" type="disc"/> ${toDoItem}</div>`
-              
+
             }
         }
     </script>
