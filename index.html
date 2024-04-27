@@ -102,11 +102,24 @@
 
         <div class="action-container">
             <input type="text" id="input" class="input-box" />
-            <button class="btn" >Add</button>
+            <button class="btn" onclick="add ()">Add</button>
 
         </div>
     </div>
 
+<!-- javascript -->
+<script>
 
+ const toDoList = [] ;        <!-- //creating an empty array//  -->
+
+ function add (){
+    const inputElement = document.getElementById("input");
+    toDoList.push(inputElement.value)  ;
+    console.log(inputElement.value)  ;
+    inputElement.value=""  ;
+ }
+
+  
+ </script>
 </body>
 </html>
