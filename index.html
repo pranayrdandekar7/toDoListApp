@@ -24,6 +24,7 @@
             padding: 10px;
             background-image: radial-gradient(73% 147%, #EADFDF 59%, #ECE2DF 100%), radial-gradient(91% 146%, rgba(255, 255, 255, 0.50) 47%, rgba(0, 0, 0, 0.50) 100%);
             background-blend-mode: screen;
+            position: relative;
             
 
         }
@@ -53,6 +54,8 @@
             display: flex;
             flex-wrap: wrap;
             justify-content: space-evenly;
+            position: absolute;
+            bottom: 10px;
             width: 500px
         }
 
@@ -62,6 +65,25 @@
             font-size: 18px;
             width: 300px;
             border: 1px solid black;
+        }
+
+        .btn {
+            font-size: 18px;
+            padding: 8px 20px;
+            width: 80px;
+            height: 40px;
+            border-radius: 10px;
+            font-weight: bold;
+            border: 1px solid black;
+
+            background-image: linear-gradient(120deg, #89f7fe 0%, #66a6ff 100%);
+        }
+
+        .btn:hover {
+            background-image: linear-gradient(180deg, #2af598 0%, #009efd 100%);
+            cursor: pointer;
+            font-size: 19px;
+            box-shadow: 0 0 5px 2px gray;
         }
 
 
