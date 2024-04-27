@@ -110,7 +110,7 @@
 <!-- javascript -->
 <script>
 
- const toDoList = [] ;        <!-- //creating an empty array//  -->
+ const toDoList = [] ;         //creating an empty array//  
 
  function add (){
     const inputElement = document.getElementById("input");
@@ -119,7 +119,15 @@
     inputElement.value=""  ;
  }
 
-  
+  function renderToDOList(){
+    const listContainerElement =document.getElementById("list-container");
+    listContainerElement.innerHTML="";       //by defualut set as an empty container list//  
+
+    for (const toDoItem of toDoList){
+        listContainerElement.innerHTML += `<div class="list-item" > ${toDoItem}</div>`
+
+    }
+  }
  </script>
 </body>
 </html>
