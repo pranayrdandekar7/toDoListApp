@@ -157,7 +157,15 @@
     <!-- javascript -->
     <script>
 
-        const toDoList = [];         //creating an empty array//  
+        let toDoList = [];         //creating an empty array//  
+
+       const listFromLocalStorage = localStorage.getItem("toDoList");  //getting element from loacl storage// 
+       console.log(listFromLocalStorage)
+       if(listFromLocalStorage){
+       
+        toDoList = JSON.parse(listFromLocalStorage);
+        renderToDOList();
+       }
 
         function add() {
 
@@ -168,6 +176,8 @@
             }
 
             toDoList.push(inputElement.value);
+            localStorage.setItem("toDoList",JSON.stringify(toDoList));   //store in local storage //  
+
             console.log(inputElement.value);
             inputElement.value = "";
             renderToDOList();
